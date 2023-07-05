@@ -1,0 +1,169 @@
+<h1 id="challenge-deezer-rock">Challenge Deezer Rock</h1>
+<p>Exercice de révision sur PHP et les tableaux associatifs et multidimensionnels</p>
+<h2 id="instructions">Instructions</h2>
+<h3 id="groupes">Groupes</h3>
+<ul>
+<li>Consigner les informations fournies dans un tableau associatif ci-dessous dont les clés sont <em>"name", "fans", "active", "members"</em> : identifier le type de variable correspondant à chaque donnée.</li>
+<li>Afficher un tableau HTML <em>par groupe</em> sous la forme :</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>~~The Beatles~~</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3 412 906 fans</td>
+</tr>
+<tr>
+<td><em>Members</em></td>
+</tr>
+<tr>
+<td>John Lennon, Paul McCartney, George Harrison, Ringo Starr</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Si le groupe n'est plus actif son nom sera barré via la balise HTML <code>&lt;del&gt;&lt;/del&gt;</code>.</li>
+<li>Afficher le nombre de fans avec un séparateur ' ' tous les 3 chiffres, voir la <a href="http://php.net/manual/en/function.number-format.php">fonction PHP number_format</a>.</li>
+<li>Afficher 2 liens au-dessus des tableaux pour filtrer par groupe <em>actif, inactif</em> ou <em>tous</em> : traiter la demande via un paramètre d'URL et la variable $_GET (lien direct via <code>&lt;a href</code> ou via formulaire selon votre préférence) : n'afficher que les groupes concernés par le filtre !</li>
+</ul>
+<p><details><br />
+    <summary>Liste des groupes</summary></p>
+<pre><code>hljs - Nom du groupe
+- Nombre de fans du groupe
+- Groupe toujours actif ou non
+- Membres du groupe
+
+```
+Louise Attaque
+<span class="hljs-number">336014</span>
+true
+Gaëtan Roussel, Arnaud Samuel, Robin Feix, Alexandre Margraff
+
+Coldplay
+<span class="hljs-number">11343676</span>
+true
+Chris Martin, Guy <span class="hljs-keyword">Berryman, </span><span class="hljs-keyword">Jon </span><span class="hljs-keyword">Buckland, </span>Will Champion
+
+U2
+<span class="hljs-number">3776210</span>
+true
+<span class="hljs-keyword">Bono, </span>The Edge, Adam Clayton, Larry <span class="hljs-keyword">Mullen </span><span class="hljs-keyword">Junior, </span>Ivan McCormick, Peter Martin, <span class="hljs-keyword">Dik </span>Evans
+
+Queen
+<span class="hljs-number">5531303</span>
+false
+Freddie Mercury, <span class="hljs-keyword">Brian </span>May, Roger Taylor, <span class="hljs-keyword">John </span>Deacon, Mike Grose, Spike Edney, Doug <span class="hljs-keyword">Bogie, </span><span class="hljs-keyword">Barry </span>Mitchell
+
+The <span class="hljs-keyword">Beatles
+</span><span class="hljs-number">3412906</span>
+false
+<span class="hljs-keyword">John </span>Lennon, Paul McCartney, George Harrison, Ringo Starr
+
+The Rolling Stones
+<span class="hljs-number">3977329</span>
+true
+Mick <span class="hljs-keyword">Jagger, </span>Keith Richards, Ron Wood, Charlie Watts
+
+Nirvana
+<span class="hljs-number">6226653</span>
+false
+Kurt Cobain, Dave Grohl, Krist Novoselic, Pat Smear
+
+Pink Floyd
+<span class="hljs-number">3507791</span>
+false
+David Gilmour, Roger Waters, Syd <span class="hljs-keyword">Barrett, </span>Richard Wright, Nick Mason
+```
+</code></pre>
+<p></details></p>
+<h3 id="commentaires">Commentaires</h3>
+<ul>
+<li>Consigner les informations fournies dans un tableau associatif dont les clés sont <em>"pseudo", "seconds", "comment", "category"</em> : identifier le type de variable correspondant à chaque donnée.</li>
+<li>Sous les groupes, afficher sous forme de liste HTML les commentaires de la catégorie : on affichera le nombre d'heures, minutes et secondes depuis que le commentaire a été posté et seulement si le commentaire a été posté il y a moins d'un jour et s'il appartient à la catégorie <em>"rock"</em>, soit si on décompose :<ul>
+<li>Boucler sur les commentaires.</li>
+<li>Afficher l'auteur, afficher le temps écoulé (convertir le nombre de secondes en <code>h:m:s</code> via une fonction utilisateur que vous créerez) puis afficher le commentaire.</li>
+<li>Et seulement si le commentaire a été posté il y a moins d'un jour et s'il appartient à la catégorie <em>"rock"</em>.</li></ul></li>
+</ul>
+<p><strong>Exemple :</strong></p>
+<ul>
+<li><strong>Clément</strong> <em>Il y a 2h 3min 5s</em> : Du rock ? Mon oeil !</li>
+<li><strong>java57</strong> <em>Il y a 1h 38min 12s</em> : Le meilleur groupe de rock de tous les temps !</li>
+</ul>
+<p><details></p>
+<p><summary>Liste des commentaires</summary></p>
+<ul>
+<li><p>Pseudo</p></li>
+<li><p>Nombre de secondes depuis quand a été posté le commentaire</p></li>
+<li><p>Commentaire posté</p></li>
+<li><p>Catégorie du commentaire</p>
+<pre><code>hljs <span class="hljs-keyword">Cl</span>ément
+89037
+Du rock ? Mon oeil !
+rock
+
+java57
+9837
+Le meilleur groupe <span class="hljs-keyword">de</span> rock <span class="hljs-keyword">de</span> tous les temps !
+rock
+
+Yacham
+9737
+Faites un ptit tour sur <span class="hljs-keyword">ma</span> playlist
+rock
+
+Suzanne
+8737
+j&#x27;adore ça je kiffe Freddy mercury
+jazz
+
+rv41
+8012
+Jamais, jamais il y aura un autre freddy....25ans snif
+rock
+
+gerty50
+7500
+nostalgie !.... mais <span class="hljs-keyword">que</span> cela fait du bien <span class="hljs-keyword">d</span>&#x27;écouter cette voix superbe !...
+rock
+
+Myriam Claude Chardon
+7620
+grosse pensé<span class="hljs-keyword">e</span> pour toi mon Fab!!!! tu me manques .....
+rock
+
+Bastien Dja Daouadji
+92047
+Sérieux honteux <span class="hljs-keyword">de</span> mettre <span class="hljs-keyword">en</span> couverture un groupe <span class="hljs-keyword">qui</span> a rien à voir avec le groupe <span class="hljs-keyword">de</span> rock QUEEN Deezer: YOU HAD <span class="hljs-keyword">ONE</span> JOB <span class="hljs-keyword">for</span> god sake....
+jazz
+
+Matthias
+100037
+Groooossse erreur ils ont <span class="hljs-keyword">m</span>élangé les morceaux du vrai Queen avec un homonyme vraiment pourri
+jazz
+
+Rockeur
+5432
+playlist <span class="hljs-keyword">de</span> <span class="hljs-keyword">m</span>étal svp metter <span class="hljs-keyword">des</span> commentaires http:<span class="hljs-comment">//www.deezer.com/playlist/1368668055</span>
+rock
+
+BRU <span class="hljs-keyword">NOI</span>
+356
+http:<span class="hljs-comment">//www.deezer.com/playlist/1215050481</span>
+rock
+
+gregmax46
+215
+Un <span class="hljs-keyword">des</span> plus grand groupes <span class="hljs-keyword">de</span> rock Freddie Mercury un phénomène sur <span class="hljs-keyword">sc</span>éne
+jazz
+</code></pre></li>
+</ul>
+<p></details></p>
+<h3 id="consignes-de-code">Consignes de code</h3>
+<ul>
+<li>Pensez à indenter votre code (espaces pour délimiter les blocs if et les fonctions notamment).</li>
+<li>Commentez votre code afin d'expliquer ce que vous faites à quelqu'un qui lirait votre code pour la première fois (ou vous-même par la suite ;)).</li>
+</ul>
+<hr />
